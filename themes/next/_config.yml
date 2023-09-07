@@ -60,7 +60,7 @@ footer:
     # If you want to animate the icon, set it to true.
     animated: true
     # Change the color of icon, using Hex Code.
-    color: "#B40000"
+    color: "#FFFFFF"
 
   # If not defined, `author` from Hexo `_config.yml` will be used.
   copyright:
@@ -159,7 +159,7 @@ sidebar:
 # Sidebar Avatar
 avatar:
   # Replace the default image and set the url here.
-  url: /images/paperplane-square.jpg
+  url: #/images/paperplane-square.jpg
   # If true, the avatar will be dispalyed in circle.
   rounded: true
   # If true, the avatar will be rotated with the cursor.
