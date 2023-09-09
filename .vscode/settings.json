@@ -5,5 +5,8 @@
       "strings": "on",
       "other": "on"
     }
-  }
+  },
+  "vscode-imgur.client_id": "fa3c42a5d62589b",
+  "vscode-imgur.client_secret": "78734cb16efb55cff027c4ddfcf2a023b78e169a",
+  "vscode-imgur.preferUserUpload": true
 }
