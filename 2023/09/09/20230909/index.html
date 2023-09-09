@@ -21,29 +21,36 @@
     var CONFIG = {"hostname":"paperplane030.github.io","root":"/hexo-blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Paperplane 隨手紀錄">
-<meta property="og:url" content="https://paperplane030.github.io/hexo-blog/index.html">
+  <meta name="description" content="Hexo Next 主題更改程式碼區塊樣式 + fancybox">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo Next 主題更改程式碼區塊樣式">
+<meta property="og:url" content="https://paperplane030.github.io/hexo-blog/2023/09/09/20230909/index.html">
 <meta property="og:site_name" content="Paperplane 隨手紀錄">
+<meta property="og:description" content="Hexo Next 主題更改程式碼區塊樣式 + fancybox">
 <meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://i.imgur.com/O3Up1eQ.png">
+<meta property="og:image" content="https://i.imgur.com/3tSGNhM.png">
+<meta property="article:published_time" content="2023-09-09T13:25:45.000Z">
+<meta property="article:modified_time" content="2023-09-09T06:45:04.459Z">
 <meta property="article:author" content="Papaerplane">
 <meta property="article:tag" content="前端,後端,網頁,技術,網頁開發,前端開發,JavaScript,HTML,CSS,SCSS">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/O3Up1eQ.png">
 
-<link rel="canonical" href="https://paperplane030.github.io/hexo-blog/">
+<link rel="canonical" href="https://paperplane030.github.io/hexo-blog/2023/09/09/20230909/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-TW'
   };
 </script>
 
-  <title>Paperplane 隨手紀錄</title>
+  <title>Hexo Next 主題更改程式碼區塊樣式 | Paperplane 隨手紀錄</title>
   
 
 
@@ -142,9 +149,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
@@ -160,10 +168,9 @@
       <meta itemprop="name" content="Paperplane 隨手紀錄">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/hexo-blog/2023/09/09/20230909/" class="post-title-link" itemprop="url">Hexo Next 主題更改程式碼區塊樣式</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Hexo Next 主題更改程式碼區塊樣式
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -177,6 +184,7 @@
             </span>
 
           
+            <div class="post-description">Hexo Next 主題更改程式碼區塊樣式 + fancybox</div>
 
         </div>
       </header>
@@ -187,102 +195,54 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Hexo Next 主題更改程式碼區塊樣式 + fancybox</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/hexo-blog/2023/09/09/20230909/">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>因為在 <strong><a target="_blank" rel="noopener" href="https://israynotarray.com/nuxt/20230808/3162324445/">Ray 大大的部落格</a></strong> 中，發現文章中的程式碼區塊有類似 Mac 主題的樣式，比起 next 預設的樣式來說好看多了，另外也有複製程式碼的按鈕，也想美化一下預設樣式所以來研究怎麼修改並且記錄下來。</p>
+<h4 id="版本們"><a href="#版本們" class="headerlink" title="版本們"></a>版本們</h4><ul>
+<li>hexo : 6.3.0</li>
+<li>hexo-theme-next : 7.8.0</li>
+</ul>
+<br>
+
+<h3 id="程式碼區塊樣式以及複製按鈕"><a href="#程式碼區塊樣式以及複製按鈕" class="headerlink" title="程式碼區塊樣式以及複製按鈕"></a>程式碼區塊樣式以及複製按鈕</h3><p>這個意外的簡單，因為我是將主題下載下來放進 hexo 專案內的 themes 資料夾內的方式來使用主題，所以到 <code>themes/next/_config.yml</code> 檔案內搜尋 <code>codeblock</code> ，將 <code>copy_button</code> 下方的 <code>enable</code> 改為 <code>true</code> 、<code>style</code> 改為 <code>mac</code> ，就能同時有複製程式碼按鈕以及美美的樣式了 ~</p>
+<p><img src="https://i.imgur.com/O3Up1eQ.png" alt="themes/next/_config.yml"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;這是一段展示用的程式碼&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>header 的部分漂亮了，但是程式碼區塊內的背景顏色還是不滿意的話，則可以往上看到 <code>highlight_theme</code> 屬性並依據文件內提供的主題名稱 <code>normal | night | night eighties ...</code> 來修改。</p>
+<br>
+
+<h3 id="延伸問題-行內程式碼樣式沒有跟著上述設定而更改…"><a href="#延伸問題-行內程式碼樣式沒有跟著上述設定而更改…" class="headerlink" title="延伸問題 行內程式碼樣式沒有跟著上述設定而更改…"></a>延伸問題 行內程式碼樣式沒有跟著上述設定而更改…</h3><p><img src="https://i.imgur.com/3tSGNhM.png" alt="行內程式碼的背景還是亮的嚇人"></p>
+<br>
+
+<p>依照搜尋及實測的結果，在 <strong>新版的 next</strong> 中，這個問題已經得到解決了，安裝方式可以參考 <strong><a target="_blank" rel="noopener" href="https://israynotarray.com/hexo/20201101/60919/">Ray 大的教學文</a></strong> 跟著步驟操作即可。</p>
+<p>但如果版本與我相同的話，提供一下我的解決辦法 :<br>找到 <code>themes\next\source\css\_common\scaffolding\highlight\highlight.styl</code> 這隻檔案，將程式碼如下所示取代 :</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">code</span> &#123;</span><br><span class="line">  <span class="comment">/* background: $code-background; */</span></span><br><span class="line">  <span class="attribute">background</span>: $highlight-background;</span><br><span class="line">  <span class="comment">/* color: $code-foreground; */</span></span><br><span class="line">  <span class="attribute">color</span>: $highlight-foreground;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這樣之後行內程式碼的背景再也不會亮的嚇人啦 ~</p>
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>在打這篇文章的過程中另外發現，文章中的圖片顯示方式，也可以從 <code>themes/next/_config.yml</code> 中搜尋 <code>fancybox</code> ，屬性並開啟，圖片就可以點選放大、並且圖片下方也會有註解文字，真的有 fancy 的感覺 ~</p>
+
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://paperplane030.github.io/hexo-blog/2023/09/07/20230907/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/hexo-blog/images/avatar.gif">
-      <meta itemprop="name" content="Papaerplane">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Paperplane 隨手紀錄">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/hexo-blog/2023/09/07/20230907/" class="post-title-link" itemprop="url">(1)Css 文字 Loading Animation</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2023-09-07 21:27:08" itemprop="dateCreated datePublished" datetime="2023-09-07T21:27:08+00:00">2023-09-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2023-09-09 06:45:04" itemprop="dateModified" datetime="2023-09-09T06:45:04+00:00">2023-09-09</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>紀錄練習 Css 完成簡易 loading animation 以及在文章內嵌入 codepen 。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/hexo-blog/2023/09/07/20230907/">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/hexo-blog/2023/09/07/20230907/" rel="prev" title="(1)Css 文字 Loading Animation">
+      <i class="fa fa-chevron-left"></i> (1)Css 文字 Loading Animation
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 
@@ -335,6 +295,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%89%88%E6%9C%AC%E5%80%91"><span class="nav-number">1.0.1.</span> <span class="nav-text">版本們</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BC%8F%E7%A2%BC%E5%8D%80%E5%A1%8A%E6%A8%A3%E5%BC%8F%E4%BB%A5%E5%8F%8A%E8%A4%87%E8%A3%BD%E6%8C%89%E9%88%95"><span class="nav-number">1.1.</span> <span class="nav-text">程式碼區塊樣式以及複製按鈕</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BB%B6%E4%BC%B8%E5%95%8F%E9%A1%8C-%E8%A1%8C%E5%85%A7%E7%A8%8B%E5%BC%8F%E7%A2%BC%E6%A8%A3%E5%BC%8F%E6%B2%92%E6%9C%89%E8%B7%9F%E8%91%97%E4%B8%8A%E8%BF%B0%E8%A8%AD%E5%AE%9A%E8%80%8C%E6%9B%B4%E6%94%B9%E2%80%A6"><span class="nav-number">1.2.</span> <span class="nav-text">延伸問題 行內程式碼樣式沒有跟著上述設定而更改…</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B5%90%E8%AA%9E"><span class="nav-number">2.</span> <span class="nav-text">結語</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

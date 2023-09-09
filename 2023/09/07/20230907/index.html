@@ -14,22 +14,23 @@
 
 
 <link rel="stylesheet" href="/hexo-blog/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"paperplane030.github.io","root":"/hexo-blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"paperplane030.github.io","root":"/hexo-blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="紀錄練習 Css 完成簡易 loading animation 以及在文章內嵌入 codepen 。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Css Loading Animation">
+<meta property="og:title" content="(1)Css 文字 Loading Animation">
 <meta property="og:url" content="https://paperplane030.github.io/hexo-blog/2023/09/07/20230907/index.html">
 <meta property="og:site_name" content="Paperplane 隨手紀錄">
 <meta property="og:description" content="紀錄練習 Css 完成簡易 loading animation 以及在文章內嵌入 codepen 。">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://i.imgur.com/NgVBHIO.png">
 <meta property="article:published_time" content="2023-09-07T21:27:08.000Z">
-<meta property="article:modified_time" content="2023-09-08T13:41:28.192Z">
+<meta property="article:modified_time" content="2023-09-09T06:45:04.459Z">
 <meta property="article:author" content="Papaerplane">
 <meta property="article:tag" content="前端,後端,網頁,技術,網頁開發,前端開發,JavaScript,HTML,CSS,SCSS">
 <meta name="twitter:card" content="summary">
@@ -48,7 +49,7 @@
   };
 </script>
 
-  <title>Css Loading Animation | Paperplane 隨手紀錄</title>
+  <title>(1)Css 文字 Loading Animation | Paperplane 隨手紀錄</title>
   
 
 
@@ -167,7 +168,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Css Loading Animation
+          (1)Css 文字 Loading Animation
         </h1>
 
         <div class="post-meta">
@@ -184,7 +185,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2023-09-08 13:41:28" itemprop="dateModified" datetime="2023-09-08T13:41:28+00:00">2023-09-08</time>
+                <time title="修改時間：2023-09-09 06:45:04" itemprop="dateModified" datetime="2023-09-09T06:45:04+00:00">2023-09-09</time>
               </span>
 
           
@@ -204,9 +205,10 @@
 <p>這個練習可以注意到 <code>margin-left</code> 的設定，讓文字比原本只有 <code>translateY</code> 的上下移動外，還有向左右拓展的動畫效果。</p>
 <br>
 
-<h3 id="在文章中嵌入-codepen"><a href="#在文章中嵌入-codepen" class="headerlink" title="在文章中嵌入 codepen"></a>在文章中嵌入 codepen</h3><p>從網路上找的資源顯示有  <a target="_blank" rel="noopener" href="https://npm.io/package/hexo-codepen">hexo-codepen</a> 這個套件可以使用，但是我不管怎麼試，在官方文件中 <br><code>&#123;% codepen userId|anonymous|anon slugHash theme [defaultTab [height [width]]] %&#125;</code><br>↑ 這個使用方式，呈現出來的 codepen 預覽寬高都搞不定，於是再嘗試找找其他資源。</p>
+<h3 id="在文章中嵌入-codepen"><a href="#在文章中嵌入-codepen" class="headerlink" title="在文章中嵌入 codepen"></a>在文章中嵌入 codepen</h3><p>從網路上找的資源顯示有 <a target="_blank" rel="noopener" href="https://npm.io/package/hexo-codepen">hexo-codepen</a> 這個套件可以使用，但是我不管怎麼試，在官方文件中 <br><code>&#123;% codepen userId|anonymous|anon slugHash theme [defaultTab [height [width]]] %&#125;</code><br><br>↑ 這個使用方式，呈現出來的 codepen 預覽寬高都搞不定，於是再嘗試找找其他資源。</p>
 <p>然後在 <a target="_blank" rel="noopener" href="https://hexo.io/zh-tw/docs/tag-plugins#iframe">hexo 文件</a> 中，看到有支援 iframe 的語法</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span>% iframe url <span class="punctuation">[</span>width<span class="punctuation">]</span> <span class="punctuation">[</span>height<span class="punctuation">]</span> %<span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
 <p>嘗試使用，直接從 codepen embed，選擇 iframe，直接把 src 貼上就如文章開頭一樣成功嵌入了 !</p>
 <p><img src="https://i.imgur.com/NgVBHIO.png" alt="codepen iframe 位置"></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% iframe https://codepen.io/paperplanea/embed/rNojyxY?default-tab=html%2Cresult&amp;theme-id=dark %&#125;</span><br></pre></td></tr></table></figure>
@@ -226,6 +228,13 @@
 
 
         
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/hexo-blog/2023/09/09/20230909/" rel="next" title="Hexo Next 主題更改程式碼區塊樣式">
+      Hexo Next 主題更改程式碼區塊樣式 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
       </footer>
     
   </article>
@@ -297,7 +306,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/hexo-blog/archives/">
         
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -349,6 +358,8 @@
 
   
   <script src="/hexo-blog/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="/hexo-blog/lib/velocity/velocity.min.js"></script>
   <script src="/hexo-blog/lib/velocity/velocity.ui.min.js"></script>
 
